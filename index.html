@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Team Ardent</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	공사중입니다.<br>유리같은 개인 서버에서 합금같은 깃허브로 이사(...)
-</body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
